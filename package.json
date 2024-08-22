@@ -1,0 +1,21 @@
+{
+  "name": "factory-curd",
+  "version": "1.0.14",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Usman Pasha",
+  "license": "ISC",
+  "dependencies": {
+    "auth-curd-api": "^1.0.7",
+    "common-function-api": "^1.0.17",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4",
+    "mongoose-aggregate-paginate-v2": "^1.1.0",
+    "mongoose-paginate-v2": "^1.8.2",
+    "nodemon": "^3.1.4"
+  }
+}

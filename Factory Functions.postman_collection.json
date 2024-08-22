@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "6d3d085c-eb4f-41a1-80db-7ce6346cc0f7",
+		"name": "Factory Functions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21073529",
+		"_collection_link": "https://www.postman.com/research-astronaut-66980967/workspace/my-workspace/collection/21073529-6d3d085c-eb4f-41a1-80db-7ce6346cc0f7?action=share&source=collection_link&creator=21073529"
+	},
+	"item": [
+		{
+			"name": "API 1: create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"collectionName\": \"category\",\r\n    \"categoryName\": \"category Namess...\",\r\n    \"mainPage\": \"qwertry\",\r\n    \"arrayImages\": [\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3002/factory/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"factory",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 2: getAll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"collectionName\":\"category\"\r\n    // \"type\":\"users\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3002/factory/getAll",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"factory",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 3: getOne",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"collectionName\":\"category\",\r\n    \"id\":\"667bb3ec2ac589d3fe60347a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3002/factory/getOne",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"factory",
+						"getOne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 4: update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"collectionName\": \"category\",\r\n    \"categoryName\": \"Test Data Base....\",\r\n    \"mainPage\": \"qwertry\",\r\n    \"arrayImages\": [\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        },\r\n        {\r\n            \"img\": \"image1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3002/factory/update/667bb3ec2ac589d3fe60347a",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"factory",
+						"update",
+						"667bb3ec2ac589d3fe60347a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 5: delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"collectionName\": \"category\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3002/factory/delete/667bb3f02ac589d3fe60347e",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3002",
+					"path": [
+						"factory",
+						"delete",
+						"667bb3f02ac589d3fe60347e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
