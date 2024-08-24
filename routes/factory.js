@@ -3,7 +3,7 @@ const factoryController = require("../controllers/factory.controller");
 const factoryRouter = Router();
 // const { catchError } = require("common-function-api")
 const { catchError } = require("../utils/catchError")
-const jwtVerify = require("auth-curd-api")
+const jwtVerify = require("auth-curd-api2-otp")
 
 factoryRouter.route("/create")
     .post(jwtVerify.authorized.verifyJWT, catchError(factoryController.createFactory))
