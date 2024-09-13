@@ -1,5 +1,5 @@
 const factoryService = require("../services/factory.service");
-const { logger, responser, upload } = require("common-function-api")
+const { logger, responser, upload } = require("database-connection-function-com")
 
 module.exports.createFactory = async (req, res) => {
     logger.info(`Creating Factory Controllers`);

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const paginate = require("mongoose-paginate-v2");
 const aggregatePaginate = require("mongoose-aggregate-paginate-v2");
-const { apiFeatures,logger } = require("common-function-api")
+const { apiFeatures,logger } = require("database-connection-function-com")
 
 // const getModel = (type) => {
 //     return mongoose.models[type] || mongoose.model(type, new mongoose.Schema({}, { strict: false }));
@@ -18,7 +18,10 @@ const getModel = (type) => {
         strict: false,
     };
     // Create the schema with the options
-    const schema = new mongoose.Schema({}, schemaOptions);
+    // const schema = new mongoose.Schema({}, schemaOptions);
+    const schema = new mongoose.Schema({
+        createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'user' }, // Explicitly define 'createdBy' as a reference
+    }, schemaOptions);
     // Apply the plugins to the schema
     schema.plugin(paginate);
     schema.plugin(aggregatePaginate);
@@ -33,15 +36,38 @@ module.exports.createFactory = async (type, data) => {
     return record
 }
 
+// const populateQuery = [
+//     {
+//         path: 'createdBy',
+//         select: ['_id', 'username', 'email', 'phoneNumber'],
+//     }
+// ];
+// module.exports.getAllFactories = async (type, data) => {
+    
+//     const model = getModel(type)
+//     const record = await model.find(data).populate(populateQuery)
+//     return record
+// }
+
+const populateQuery = [
+    {
+        path: 'createdBy',
+        select: ['_id', 'username', 'email', 'phoneNumber'],
+        strictPopulate: false // Disable strict populate
+    }
+];
+
 module.exports.getAllFactories = async (type, data) => {
-    const model = getModel(type)
-    const record = await model.find(data)
-    return record
-}
+    const model = getModel(type);
+    
+    const record = await model.find(data).populate(populateQuery).exec();
+    
+    return record;
+};
 
 module.exports.getOneFactory = async (type, data) => {
     const model = getModel(type)
-    const record = await model.findOne(data)
+    const record = await model.findOne(data).populate(populateQuery)
     return record
 }
 
@@ -66,6 +92,7 @@ module.exports.getAllFactoriesWithPaginations = async (type, query) => {
         .orRegexMultipleSearch("searchFilter")
         .sort()
         .paginate()
+        .populate(populateQuery)
         .exec(model);
     return record.data;
 }
