@@ -3,31 +3,32 @@ const paginate = require("mongoose-paginate-v2");
 const aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 const { apiFeatures,logger } = require("database-connection-function-com")
 
-// const getModel = (type) => {
-//     return mongoose.models[type] || mongoose.model(type, new mongoose.Schema({}, { strict: false }));
-// }
 
-// Updated getModel function to include pagination plugins
+// Unified getModel function with proper schema registration and error handling
 const getModel = (type) => {
     if (mongoose.models[type]) {
         return mongoose.models[type];
     }
-    // Combine the options into a single object
+
+    // Define schema options
     const schemaOptions = {
         timestamps: true,
         strict: false,
     };
-    // Create the schema with the options
-    // const schema = new mongoose.Schema({}, schemaOptions);
-    const schema = new mongoose.Schema({
-        createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'user' }, // Explicitly define 'createdBy' as a reference
-    }, schemaOptions);
-    // Apply the plugins to the schema
+
+    // Define schema fields
+    const schemaFields = {
+        createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'users' }, // Explicit reference to 'user' model
+    };
+
+    // Create schema and apply plugins
+    const schema = new mongoose.Schema(schemaFields, schemaOptions);
     schema.plugin(paginate);
     schema.plugin(aggregatePaginate);
-    // Return the model
+
+    // Register and return the model
     return mongoose.model(type, schema);
-}
+};
 
 
 module.exports.createFactory = async (type, data) => {
@@ -36,18 +37,7 @@ module.exports.createFactory = async (type, data) => {
     return record
 }
 
-// const populateQuery = [
-//     {
-//         path: 'createdBy',
-//         select: ['_id', 'username', 'email', 'phoneNumber'],
-//     }
-// ];
-// module.exports.getAllFactories = async (type, data) => {
-    
-//     const model = getModel(type)
-//     const record = await model.find(data).populate(populateQuery)
-//     return record
-// }
+
 
 const populateQuery = [
     {
