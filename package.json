@@ -1,6 +1,6 @@
 {
   "name": "factory-curd-no-otp",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "Usman Pasha",
   "license": "ISC",
   "dependencies": {
+    "auth-curd-api-com-otp-and-password": "^1.0.8",
     "auth-curd-api2-otp": "^1.0.0",
     "database-connection-function-com": "^1.0.3",
     "express": "^4.19.2",
