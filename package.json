@@ -1,6 +1,6 @@
 {
   "name": "factory-curd-no-otp",
-  "version": "2.0.8",
+  "version": "2.0.16",
   "description": "",
   "main": "index.js",
   "scripts": {
