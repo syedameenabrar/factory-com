@@ -1,6 +1,6 @@
 {
   "name": "factory-curd-no-otp",
-  "version": "2.0.16",
+  "version": "3.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "auth-curd-api2-otp": "^1.0.0",
     "database-connection-function-com": "^1.0.3",
     "express": "^4.19.2",
+    "factory-curd-no-otp": "^2.0.19",
     "mongoose": "^8.4.4",
     "mongoose-aggregate-paginate-v2": "^1.1.0",
     "mongoose-paginate-v2": "^1.8.2",
