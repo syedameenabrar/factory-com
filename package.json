@@ -1,6 +1,6 @@
 {
   "name": "factory-curd-no-otp",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,10 @@
   "author": "Usman Pasha",
   "license": "ISC",
   "dependencies": {
-    "auth-curd-api-com-otp-and-password": "^1.0.8",
+    "auth-curd-api-com-otp-and-password": "^1.0.12",
     "auth-curd-api2-otp": "^1.0.0",
-    "database-connection-function-com": "^2.0.0",
+    "database-connection-function-com": "^2.0.6",
     "express": "^4.19.2",
-    "factory-curd-no-otp": "^2.0.19",
     "mongoose": "^8.4.4",
     "mongoose-aggregate-paginate-v2": "^1.1.0",
     "mongoose-paginate-v2": "^1.8.2",
